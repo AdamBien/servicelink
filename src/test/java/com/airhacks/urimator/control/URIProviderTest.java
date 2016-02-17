@@ -1,4 +1,4 @@
-package com.airhacks.urimator;
+package com.airhacks.urimator.control;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
