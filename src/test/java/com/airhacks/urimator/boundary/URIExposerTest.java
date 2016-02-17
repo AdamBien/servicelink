@@ -25,6 +25,10 @@ public class URIExposerTest {
     @LinkedContainer(linkName = "ping", portNumber = 8080, resource = "/hugo")
     WebTarget fullyConfiguredWebTarget;
 
+    @Inject
+    @LinkedContainer(portNumber = 8080, resource = "/hugo")
+    String ping;
+
     @Test
     public void fullyConfiguredURIInjection() {
         assertThat(fullyConfiguredHost, is("http://42.42.42.42:8080/hugo"));
@@ -34,6 +38,12 @@ public class URIExposerTest {
     public void fullyConfiguredWebTargetInjection() throws MalformedURLException {
         assertNotNull(fullyConfiguredWebTarget);
         assertThat(fullyConfiguredWebTarget.getUri().toString(), is("http://42.42.42.42:8080/hugo"));
+    }
+
+    @Test
+    public void conventionalLinkName() {
+        assertThat(ping, is("http://42.42.42.42:8080/hugo"));
+
     }
 
 }
