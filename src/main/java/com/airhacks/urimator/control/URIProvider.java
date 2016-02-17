@@ -16,8 +16,15 @@ public interface URIProvider {
         String stringifiedPort = String.valueOf(portNumber);
         String portKey = computePortKey(linkName, stringifiedPort);
         String addressKey = computeAddressKey(linkName, stringifiedPort);
-        return "http://" + System.getenv(addressKey) + ":" + System.getenv(portKey);
+        return "http://" + getEnvironmentVariable(addressKey) + ":" + getEnvironmentVariable(portKey);
+    }
 
+    static String getEnvironmentVariable(String key) {
+        String variable = System.getenv(key);
+        if (variable == null) {
+            throw new IllegalStateException("No environment variable found for: " + key);
+        }
+        return variable;
     }
 
     static String computeKeyPrefix(String linkName, String portNumber) {
