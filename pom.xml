@@ -8,7 +8,7 @@
     </parent>
     <groupId>com.airhacks</groupId>
     <artifactId>urimator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <description>
         URI generation and injection utility for
         linked Docker containers.
