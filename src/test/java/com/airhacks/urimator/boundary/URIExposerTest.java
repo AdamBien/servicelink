@@ -18,15 +18,15 @@ import org.junit.runner.RunWith;
 public class URIExposerTest {
 
     @Inject
-    @LinkedContainer(linkName = "ping", portNumber = 8080, resource = "/hugo")
+    @LinkedContainer(linkName = "ping", portNumber = 8080, path = "/hugo")
     String fullyConfiguredHost;
 
     @Inject
-    @LinkedContainer(linkName = "ping", portNumber = 8080, resource = "/hugo")
+    @LinkedContainer(linkName = "ping", portNumber = 8080, path = "/hugo")
     WebTarget fullyConfiguredWebTarget;
 
     @Inject
-    @LinkedContainer(portNumber = 8080, resource = "/hugo")
+    @LinkedContainer(portNumber = 8080, path = "/hugo")
     String ping;
 
     @Inject
@@ -50,7 +50,7 @@ public class URIExposerTest {
     }
 
     @Test
-    public void uriWithoutResource() {
+    public void uriWithEmptyPath() {
         assertThat(withoutResource, is("http://42.42.42.42:8080"));
     }
 

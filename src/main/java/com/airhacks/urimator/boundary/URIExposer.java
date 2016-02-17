@@ -24,7 +24,7 @@ public class URIExposer {
             linkName = ip.getMember().getName().toUpperCase();
         }
         int portNumber = link.portNumber();
-        String resource = link.resource();
+        String resource = link.path();
         if (resource.isEmpty()) {
             return URIProvider.computeURI(linkName, portNumber);
         } else {

@@ -23,5 +23,5 @@ public @interface LinkedContainer {
     int portNumber() default 8080;
 
     @Nonbinding
-    String resource() default "";
+    String path() default "";
 }
