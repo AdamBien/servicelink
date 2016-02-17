@@ -29,6 +29,10 @@ public class URIExposerTest {
     @LinkedContainer(portNumber = 8080, resource = "/hugo")
     String ping;
 
+    @Inject
+    @LinkedContainer(linkName = "ping", portNumber = 8080)
+    String withoutResource;
+
     @Test
     public void fullyConfiguredURIInjection() {
         assertThat(fullyConfiguredHost, is("http://42.42.42.42:8080/hugo"));
@@ -41,9 +45,13 @@ public class URIExposerTest {
     }
 
     @Test
-    public void conventionalLinkName() {
+    public void linkNameDerivedFromFieldName() {
         assertThat(ping, is("http://42.42.42.42:8080/hugo"));
+    }
 
+    @Test
+    public void uriWithoutResource() {
+        assertThat(withoutResource, is("http://42.42.42.42:8080"));
     }
 
 }
