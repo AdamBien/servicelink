@@ -1,4 +1,4 @@
-package com.airhacks.urimator.boundary;
+package com.airhacks.servicelink.boundary;
 
 import java.net.MalformedURLException;
 import javax.inject.Inject;
@@ -9,6 +9,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import com.airhacks.servicelink.boundary.LegacyLink;
 
 /**
  *
@@ -18,19 +19,19 @@ import org.junit.runner.RunWith;
 public class URIExposerTest {
 
     @Inject
-    @LinkedContainer(linkName = "ping", portNumber = 8080, path = "/hugo")
+    @LegacyLink(name = "ping", portNumber = 8080, path = "/hugo")
     String fullyConfiguredHost;
 
     @Inject
-    @LinkedContainer(linkName = "ping", portNumber = 8080, path = "/hugo")
+    @LegacyLink(name = "ping", portNumber = 8080, path = "/hugo")
     WebTarget fullyConfiguredWebTarget;
 
     @Inject
-    @LinkedContainer(portNumber = 8080, path = "/hugo")
+    @LegacyLink(portNumber = 8080, path = "/hugo")
     String ping;
 
     @Inject
-    @LinkedContainer(linkName = "ping", portNumber = 8080)
+    @LegacyLink(name = "ping", portNumber = 8080)
     String withoutResource;
 
     @Test

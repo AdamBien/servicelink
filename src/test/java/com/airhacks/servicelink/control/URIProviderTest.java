@@ -1,5 +1,6 @@
-package com.airhacks.urimator.control;
+package com.airhacks.servicelink.control;
 
+import com.airhacks.servicelink.control.URIProvider;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;

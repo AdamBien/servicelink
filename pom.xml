@@ -9,6 +9,7 @@
     <groupId>com.airhacks</groupId>
     <artifactId>servicelink</artifactId>
     <version>0.0.2-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <description>
         URI generation and injection utility for
         linked Docker containers.
@@ -33,7 +34,6 @@
             <organizationUrl>http://adam-bien.com</organizationUrl>
         </developer>
     </developers>
-    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>javax</groupId>

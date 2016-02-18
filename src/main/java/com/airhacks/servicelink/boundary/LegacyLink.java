@@ -1,4 +1,4 @@
-package com.airhacks.urimator.boundary;
+package com.airhacks.servicelink.boundary;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -17,7 +17,7 @@ import javax.inject.Qualifier;
 @Qualifier
 @Target({ElementType.FIELD, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface LinkedContainer {
+public @interface LegacyLink {
 
     /**
      *
@@ -28,7 +28,7 @@ public @interface LinkedContainer {
      * @return the configured name of the link
      */
     @Nonbinding
-    String linkName() default "";
+    String name() default "";
 
     /**
      * Docker creates a variable per exposed port e.g.:

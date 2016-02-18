@@ -1,4 +1,4 @@
-package com.airhacks.urimator.control;
+package com.airhacks.servicelink.control;
 
 import java.util.Objects;
 
@@ -8,15 +8,23 @@ import java.util.Objects;
  */
 public interface URIProvider {
 
-    public static String computeURI(String linkName, int portNumber, String resource) {
-        return computeURI(linkName, portNumber) + resource;
+    public static String computeURIWithEnvironmentEntries(String linkName, int portNumber, String resource) {
+        return computeURIWithEnvironmentEntries(linkName, portNumber) + resource;
     }
 
-    public static String computeURI(String linkName, int portNumber) {
+    public static String computeURIWithEnvironmentEntries(String linkName, int portNumber) {
         String stringifiedPort = String.valueOf(portNumber);
         String portKey = computePortKey(linkName, stringifiedPort);
         String addressKey = computeAddressKey(linkName, stringifiedPort);
         return "http://" + getEnvironmentVariable(addressKey) + ":" + getEnvironmentVariable(portKey);
+    }
+
+    public static String computeUri(String linkName, int portNumber, String resource) {
+        return "http://" + linkName + ":" + portNumber + resource;
+    }
+
+    public static String computeUri(String linkName, int portNumber) {
+        return computeUri(linkName, portNumber, "");
     }
 
     static String getEnvironmentVariable(String key) {
