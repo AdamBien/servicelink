@@ -9,7 +9,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import com.airhacks.servicelink.boundary.LegacyLink;
 
 /**
  *
@@ -34,8 +33,17 @@ public class URIExposerTest {
     @LegacyLink(name = "ping", portNumber = 8080)
     String withoutResource;
 
+    @Inject
+    @Link(name = "container-name", portNumber = 8080, path = "/hugo")
+    String fullyConfiguredLink;
+
     @Test
     public void fullyConfiguredURIInjection() {
+        assertThat(fullyConfiguredLink, is("http://container-name:8080/hugo"));
+    }
+
+    @Test
+    public void fullyConfiguredLegacyURIInjection() {
         assertThat(fullyConfiguredHost, is("http://42.42.42.42:8080/hugo"));
     }
 
@@ -46,12 +54,12 @@ public class URIExposerTest {
     }
 
     @Test
-    public void linkNameDerivedFromFieldName() {
+    public void legacyLinkNameDerivedFromFieldName() {
         assertThat(ping, is("http://42.42.42.42:8080/hugo"));
     }
 
     @Test
-    public void uriWithEmptyPath() {
+    public void legacyUriWithEmptyPath() {
         assertThat(withoutResource, is("http://42.42.42.42:8080"));
     }
 
