@@ -1,8 +1,8 @@
 # urimator
 
-URI Helper and Injector For Linked Docker Containers
+URI Helper and WebTarget Injector For Linked Docker Services
 
-# Installation (~ 6k)
+# Installation (~ 7k)
 
 ```xml
 <dependency>
