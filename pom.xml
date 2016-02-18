@@ -8,7 +8,7 @@
     </parent>
     <groupId>com.airhacks</groupId>
     <artifactId>urimator</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <description>
         URI generation and injection utility for
         linked Docker containers.
@@ -159,7 +159,7 @@
         <connection>scm:git:git@github.com:AdamBien/urimator.git</connection>
         <url>scm:git:git@github.com:AdamBien/urimator.git</url>
         <developerConnection>scm:git:git@github.com:AdamBien/urimator.git</developerConnection>
-      <tag>v0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
