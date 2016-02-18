@@ -19,14 +19,6 @@ public interface URIProvider {
         return "http://" + getEnvironmentVariable(addressKey) + ":" + getEnvironmentVariable(portKey);
     }
 
-    public static String computeUri(String linkName, int portNumber, String resource) {
-        return "http://" + linkName + ":" + portNumber + resource;
-    }
-
-    public static String computeUri(String linkName, int portNumber) {
-        return computeUri(linkName, portNumber, "");
-    }
-
     static String getEnvironmentVariable(String key) {
         String variable = System.getenv(key);
         if (variable == null) {
@@ -48,5 +40,13 @@ public interface URIProvider {
 
     static String computeAddressKey(String linkName, String portNumber) {
         return computeKeyPrefix(linkName, portNumber) + "ADDR";
+    }
+
+    public static String computeUri(String linkName, int portNumber, String resource) {
+        return "http://" + linkName + ":" + portNumber + resource;
+    }
+
+    public static String computeUri(String linkName, int portNumber) {
+        return computeUri(linkName, portNumber, "");
     }
 }
