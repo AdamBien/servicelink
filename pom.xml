@@ -8,7 +8,7 @@
     </parent>
     <groupId>com.airhacks</groupId>
     <artifactId>servicelink</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
     <description>
         URI generation and injection utility for
@@ -159,7 +159,7 @@
         <connection>scm:git:git@github.com:AdamBien/servicelink.git</connection>
         <url>scm:git:git@github.com:AdamBien/servicelink.git</url>
         <developerConnection>scm:git:git@github.com:AdamBien/servicelink.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v0.0.2</tag>
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
