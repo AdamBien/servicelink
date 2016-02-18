@@ -1,6 +1,6 @@
 # urimator
 
-URI Helper For Linked Docker Containers
+URI Helper and Injector For Linked Docker Containers
 
 # Installation (~ 6k)
 
