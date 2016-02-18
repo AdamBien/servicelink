@@ -8,9 +8,8 @@ import javax.enterprise.util.Nonbinding;
 import javax.inject.Qualifier;
 
 /**
- * A mandatory qualifier which has to be used together with <code>@Inject</code>
- * Injection of <code>String</code> and <code>WebTarget</code> is supported
- * equally well.
+ * A mandatory qualifier for the injection of legacy-links. Injection of
+ * <code>String</code> and <code>WebTarget</code> is supported equally well.
  *
  * @author airhacks.com
  */
